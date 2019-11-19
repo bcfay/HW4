@@ -7,6 +7,10 @@ interface IBinTree {
  int size();
  // returns depth of longest branch in the tree
  int height();
+ //checks whether the IBinTree is a valid heap
+ boolean validHeap();
+ //checks whether the IBinTree contains an element less than a given value
+ boolean hasLessThan(int min);
 }
 
 class MtBT implements IBinTree {
@@ -25,6 +29,18 @@ class MtBT implements IBinTree {
  // returns 0 since empty tree has no branches
  public int height() {
   return 0;
+ }
+
+ @Override
+ //an empty IBinTree is a valid heap
+ public boolean validHeap() {
+  return true;
+ }
+
+ @Override
+ //an empty IBinTree will not contain a number less than any number
+ public boolean hasLessThan(int min) {
+  return false;
  }
 }
 
@@ -59,5 +75,26 @@ class DataBT implements IBinTree {
  // adds 1 to the height of the taller subtree
  public int height() {
   return 1 + Math.max(this.left.height(), this.right.height());
+ }
+
+ @Override
+ public boolean validHeap() {
+  if(this.left.hasLessThan(this.data)||this.right.hasLessThan(this.data)){
+   return (this.left.validHeap()&&this.right.validHeap());
+  }else{
+   return false;
+  }
+ }
+
+ @Override
+ //checks if the DataBT contains a value less than min
+ //if this node has a value less than min, returns true. Otherwise checks if either of its children have a value less than the min
+ public boolean hasLessThan(int min) {
+  if(this.data<min){
+   return true;
+  }else{
+   return this.left.hasLessThan(min)||this.right.hasLessThan(min);
+  }
+
  }
 }

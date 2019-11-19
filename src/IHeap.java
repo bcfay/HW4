@@ -3,13 +3,13 @@ import java.util.Random;
 interface IHeap extends IBinTree {
  // adds given element to the heap without removing other elements
  IHeap addElt(int e);
- 
+
  // removes one occurrence of the smallest element from the heap
  IHeap remMinElt();
- 
+
  // Merge the current heap with another heap
  IHeap merge(IHeap withHeap);
- 
+
  // Determine if the root of this heap is bigger than the given element
  boolean isBigger(int e);
 }
@@ -52,13 +52,13 @@ class DataHeap extends DataBT implements IHeap {
   this.right = right;
  }
 
-  // an alternate constructor for when both subheaps are empty
+ // an alternate constructor for when both subheaps are empty
  DataHeap(int data) {
-   super(data);
-   this.left = new MtHeap();
-   this.right = new MtHeap();
+  super(data);
+  this.left = new MtHeap();
+  this.right = new MtHeap();
  }
- 
+
  public IHeap merge(IHeap withHeap) {
   int newRoot;
   IHeap H1, H2, H3;
@@ -81,7 +81,7 @@ class DataHeap extends DataBT implements IHeap {
    H2 = ((DataHeap) withHeap).right;
    H3 = this;
   }
-  
+
   // choose which trees to merge and construct the new tree
   if (H1.height() > H2.height() && H1.height() > H3.height()) {
    return new DataHeap (newRoot, H1, H2.merge (H3));
