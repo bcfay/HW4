@@ -9,12 +9,12 @@ public class HeapChecker {
      * @return True if a matching book is found.
      */
     boolean addEltTester(IHeap hOrig, int elt, IBinTree hAdded) {
-      if(hAdded.validHeap()){ //check that hAdded is a heap
-          if(listContAdd(hOrig, elt, hAdded)){ //check that hAdded contains the elements from hOrig and elt, and no additional elements
-              return true;
-          }
-      }
-    return false;
+        if(hAdded.validHeap()){ //check that hAdded is a heap
+            if(listContAdd(hOrig, elt, hAdded)){ //check that hAdded contains the elements from hOrig and elt, and no additional elements
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -24,17 +24,26 @@ public class HeapChecker {
      * @return True if a matching book is found.
      */
     boolean remMinEltTester(IHeap hOrig, IBinTree hRemoved) {
-
-//    ...code to compare hOrig and hRemoved as appropriate...
+        if(hRemoved.validHeap()){ //check that hAdded is a heap
+            if(listContRem(hOrig, hRemoved)){ //check that hAdded contains the elements from hOrig and elt, and no additional elements
+                return true;
+            }
+        }
         return false;
     }
 
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     boolean listContAdd(IHeap hOrig, int elt, IBinTree hAdded){
 
         Object added = elt;
 
-        LinkedList origList = hOrig.getData();
-        LinkedList testList = hAdded.getData();
+        LinkedList origList = hOrig.getAllData();
+        LinkedList testList = hAdded.getAllData();
 
         //time saving check that the added list is one element longer than the original list
         if((origList.size()+1)!=testList.size()){
@@ -58,28 +67,28 @@ public class HeapChecker {
         }
     }
 
-    boolean litsContains(IBinTree hAdded, IHeap hOrig){
-        LinkedList origList = hOrig.getData();
-        LinkedList testList = hAdded.getData();
-        for (Object e : origList){
-            if(!testList.remove(e)){
-               return false;
-            }
-        }
-        return true;
-    }
 
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     boolean listContRem(IHeap hOrig, IBinTree hRemoved){
 
-        int hOrig.
+        Object min = hOrig.getData();// gets minimum from original heap (the data contained in the top node as this is a valid heap)
 
-        LinkedList origList = hOrig.getData();
-        LinkedList testList = hRemoved.getData();
+        LinkedList origList = hOrig.getAllData();
+        LinkedList testList = hRemoved.getAllData();
 
-        for (Object e : origList) {
-            if (!testList.remove(e)) {
+        for (Object e : testList) {
+            if (!origList.remove(e)) {
                 return false;
             }
         }
+        if(min == origList.getFirst()){
+            return true;
+        }
+        return false;
     }
 }

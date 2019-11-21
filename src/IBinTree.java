@@ -147,7 +147,7 @@ class DataBT implements IBinTree {
 
     @Override
     public int getData() {
-        return this;
+        return this.data;
     }
 
 
