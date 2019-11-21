@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class HeapChecker {
 
 
@@ -25,6 +27,23 @@ public class HeapChecker {
 
 //    ...code to compare hOrig and hRemoved as appropriate...
         return false;
+    }
+
+    boolean listContAdd(IHeap hOrig, int elt, IBinTree hAdded){
+        if (litsContains(hAdded, hOrig)){
+            return hAdded.getData().remove((Object)elt);
+        }
+    }
+    boolean litsContains(IBinTree hAdded, IHeap hOrig){
+        LinkedList origList = hOrig.getData();
+        LinkedList testList = hAdded.getData();
+        for (Object e : origList){
+            if(!testList.contains(e)){
+               return false;
+            }
+        }
+        return true;
+
     }
 
 }
