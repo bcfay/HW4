@@ -45,7 +45,12 @@ public class HeapChecker {
             }
         }
         return true;
-
     }
 
+    boolean listContRem(IHeap hOrig, IBinTree hRemoved){
+        if (litsContains(hOrig, hRemoved)){
+            return hAdded.getData().remove((Object)elt);
+        }
+        return false;
+    }
 }
