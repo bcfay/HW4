@@ -8,13 +8,33 @@ interface IBinTree {
     int size();
     // returns depth of longest branch in the tree
     int height();
+
+    int getData();
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     //checks whether the IBinTree is a valid heap
     boolean validHeap();
+
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     //checks whether the IBinTree contains an element less than a given value
     boolean hasLessThan(int min);
-    LinkedList<Integer> getData(LinkedList dataList);
+    LinkedList<Integer> getAllData(LinkedList dataList);
 
-    LinkedList<Integer> getData();
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
+    LinkedList<Integer> getAllData();
 }
 
 class MtBT implements IBinTree {
@@ -35,25 +55,49 @@ class MtBT implements IBinTree {
         return 0;
     }
 
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     @Override
     //an empty IBinTree is a valid heap
     public boolean validHeap() {
         return true;
     }
 
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     @Override
     //an empty IBinTree will not contain a number less than any number
     public boolean hasLessThan(int min) {
         return false;
     }
 
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     @Override
-    public LinkedList<Integer> getData(LinkedList dataList) {
+    public LinkedList<Integer> getAllData(LinkedList dataList) {
         return dataList;
     }
 
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     @Override
-    public LinkedList<Integer> getData() {
+    public LinkedList<Integer> getAllData() {
         return new LinkedList();
     }
 }
@@ -91,6 +135,12 @@ class DataBT implements IBinTree {
         return 1 + Math.max(this.left.height(), this.right.height());
     }
 
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     @Override
     public boolean validHeap() {
         if(this.left.hasLessThan(this.data)||this.right.hasLessThan(this.data)){
@@ -100,6 +150,12 @@ class DataBT implements IBinTree {
         }
     }
 
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     @Override
     //checks if the DataBT contains a value less than min
     //if this node has a value less than min, returns true. Otherwise checks if either of its children have a value less than the min
@@ -112,14 +168,26 @@ class DataBT implements IBinTree {
 
     }
 
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     @Override
-    public LinkedList<Integer> getData(LinkedList dataList) {
+    public LinkedList<Integer> getAllData(LinkedList dataList) {
         dataList.add(this.data);
 
-        return this.right.getData(this.left.getData(dataList));
+        return this.right.getAllData(this.left.getAllData(dataList));
     }
 
-    public LinkedList<Integer> getData() {
-        return this.right.getData(new LinkedList());
+
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
+    public LinkedList<Integer> getAllData() {
+        return this.right.getAllData(new LinkedList());
     }
 }

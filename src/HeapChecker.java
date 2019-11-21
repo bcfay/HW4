@@ -9,12 +9,12 @@ public class HeapChecker {
      * @return True if a matching book is found.
      */
     boolean addEltTester(IHeap hOrig, int elt, IBinTree hAdded) {
-//      if(hAdded){
-//
-//      }
-
-//    ...code to compare hOrig and hAdded around the addition of elt as appropriate...
-    return true;
+      if(hAdded.validHeap()){ //check that hAdded is a heap
+          if(listContAdd(hOrig, elt, hAdded)){ //check that hAdded contains the elements from hOrig and elt, and no additional elements
+              return true;
+          }
+      }
+    return false;
     }
 
 
@@ -30,17 +30,39 @@ public class HeapChecker {
     }
 
     boolean listContAdd(IHeap hOrig, int elt, IBinTree hAdded){
-        if (litsContains(hAdded, hOrig)){
-            return hAdded.getData().remove((Object)elt);
+
+        Object added = elt;
+
+        LinkedList origList = hOrig.getData();
+        LinkedList testList = hAdded.getData();
+
+        //time saving check that the added list is one element longer than the original list
+        if((origList.size()+1)!=testList.size()){
+            return false;
         }
-        return false;
+
+        //checking that testList contains all elements in original list
+        for (Object e : origList) {
+            if (!testList.remove(e)) { //remove returns false if failed to find and remove element
+                return false;
+            }
+        }
+
+        //checking that testList contains the added element
+        if(!testList.remove(added)){
+            return false;
+        }else if (testList.size()!=0) { //checking that testList contains no additional elements
+            return false;
+        }else{
+            return true;
+        }
     }
 
     boolean litsContains(IBinTree hAdded, IHeap hOrig){
         LinkedList origList = hOrig.getData();
         LinkedList testList = hAdded.getData();
         for (Object e : origList){
-            if(!testList.contains(e)){
+            if(!testList.remove(e)){
                return false;
             }
         }
@@ -48,9 +70,16 @@ public class HeapChecker {
     }
 
     boolean listContRem(IHeap hOrig, IBinTree hRemoved){
-        if (litsContains(hOrig, hRemoved)){
-            return hAdded.getData().remove((Object)elt);
+
+        int hOrig.
+
+        LinkedList origList = hOrig.getData();
+        LinkedList testList = hRemoved.getData();
+
+        for (Object e : origList) {
+            if (!testList.remove(e)) {
+                return false;
+            }
         }
-        return false;
     }
 }
