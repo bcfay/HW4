@@ -9,6 +9,11 @@ interface IBinTree {
     // returns depth of longest branch in the tree
     int height();
 
+    /**
+     * Searches for a book with a matching title.
+     * @param hOrig The title we're searching for.
+     * @return True if a matching book is found.
+     */
     int getData();
     /**
      * Searches for a book with a matching title.
@@ -52,6 +57,11 @@ class MtBT implements IBinTree {
 
     // returns 0 since empty tree has no branches
     public int height() {
+        return 0;
+    }
+
+    @Override
+    public int getData() {
         return 0;
     }
 
@@ -133,6 +143,11 @@ class DataBT implements IBinTree {
     // adds 1 to the height of the taller subtree
     public int height() {
         return 1 + Math.max(this.left.height(), this.right.height());
+    }
+
+    @Override
+    public int getData() {
+        return this;
     }
 
 
