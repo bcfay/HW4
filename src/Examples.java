@@ -3,9 +3,9 @@ import static org.junit.Assert.*;
 
 
 
-class Examples {
+ public class Examples {
 
-    Examples(){}
+    public Examples(){}
 
     HeapChecker HT = new HeapChecker();
     TestHeap Heap6 = new TestHeap(22,null,null);
@@ -17,7 +17,9 @@ class Examples {
     TestHeap Heap1 = new TestHeap(6,Heap2,Heap3);
 
 
-
+    /**
+     * Tests 1-10 Tests the addEltTester method
+     */
 
     @Test
     public void test1(){
@@ -58,4 +60,68 @@ class Examples {
     public void test8(){
         assertTrue(HT.addEltTester(Heap2,12,Heap1.addElt(12)));
     }
+    @Test
+    public void test9(){
+        assertTrue(HT.addEltTester(Heap7,34,Heap7.addElt(34)));
+    }
+    @Test
+    public void test10(){
+        assertTrue(HT.addEltTester(Heap5,21,Heap6.addElt(21)));
+    }
+    /**
+     * Tests 11-20 Tests the remMinEltTester method
+     */
+
+   @Test
+    public void test11(){
+        assertTrue(HT.remMinEltTester(Heap1,Heap1.remMinElt()));
+    }
+    @Test
+    public void test12(){
+        assertTrue(HT.remMinEltTester(Heap2,Heap2.remMinElt()));
+    }
+    @Test
+    public void test13(){
+        assertFalse(HT.remMinEltTester(Heap1,Heap5.remMinElt()));
+    }
+    @Test
+    public void test14(){
+        assertFalse(HT.remMinEltTester(Heap2,Heap1.remMinElt()));
+    }
+    @Test
+    public void test15(){
+        assertTrue(HT.remMinEltTester(Heap7,Heap7.remMinElt()));
+    }
+    @Test
+    public void test16(){
+        assertTrue(HT.remMinEltTester(Heap7,Heap7.remMinElt()));
+    }
+     @Test
+     public void test17(){
+         assertFalse(HT.remMinEltTester(Heap3,Heap2.remMinElt()));
+     }
+     @Test
+     public void test18(){
+         assertFalse(HT.remMinEltTester(Heap4,Heap1.remMinElt()));
+     }
+     @Test
+     public void test19(){
+         assertTrue(HT.remMinEltTester(Heap6,Heap6.remMinElt()));
+     }
+     @Test
+     public void test20(){
+         assertTrue(HT.remMinEltTester(Heap5,Heap5.remMinElt()));
+     }
+
+     /**
+      * Tests 21+ Tests all other helper methods
+      */
+    // @Test
+    // public void test21(){
+        // assertTrue(HT.)
+
+    // }
+
+
+
 }
