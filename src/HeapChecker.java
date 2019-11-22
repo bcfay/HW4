@@ -90,8 +90,10 @@ public class HeapChecker {
                 return false;
             }
         }
-        if(min == origList.getFirst()){
-            return true;
+        if(origList.size()>0) {
+            if (min == origList.getFirst()) {
+                return true;
+            }
         }
         return false;
     }

@@ -41,6 +41,12 @@ class TestHeap2 extends DataHeap {
 		this.right = right;
 	}
 
+	public TestHeap2(int i) {
+		super(i);
+		this.left = new MtHeap();
+		this.right = new MtHeap();
+	}
+
 	@Override
 	public IHeap remMinElt() {
 		if (this.left.height() == 0 || this.right.height() == 0) {
@@ -62,6 +68,12 @@ class TestHeap3 extends DataHeap {
 		this.left = left;
 		this.right = right;
 	}
+
+	public TestHeap3(int i) {
+		super(i);
+		this.left = new MtHeap();
+		this.right = new MtHeap();
+	}
 	
 	@Override
 	public IHeap addElt(int e) {
@@ -80,7 +92,13 @@ class TestHeap4 extends DataHeap {
 		this.left = left;
 		this.right = right;
 	}
-	
+
+	public TestHeap4(int i) {
+		super(i);
+		this.left = new MtHeap();
+		this.right = new MtHeap();
+	}
+
 	@Override
 	public IHeap remMinElt() {
 		return new TestHeap4 (0, this.right, this.left);
@@ -98,7 +116,13 @@ class TestHeap5 extends DataHeap {
 		this.left = left;
 		this.right = right;
 	}
-	
+
+	public TestHeap5(int i) {
+		super(i);
+		this.left = new MtHeap();
+		this.right = new MtHeap();
+	}
+
 	@Override
 	public IHeap addElt(int e) {
 		Random newElt = new Random();

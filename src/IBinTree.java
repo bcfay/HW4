@@ -199,7 +199,6 @@ class DataBT implements IBinTree {
     @Override
     public LinkedList<Integer> getAllData(LinkedList dataList) {
         dataList.add(this.data);
-
         return this.right.getAllData(this.left.getAllData(dataList));
     }
 
@@ -209,6 +208,8 @@ class DataBT implements IBinTree {
      * @return a linkedList with all of the data added to it
      */
     public LinkedList<Integer> getAllData() {
-        return this.right.getAllData(this.left.getAllData(new LinkedList()));
+        LinkedList allData = new LinkedList();
+        allData.add(this.data);
+        return this.right.getAllData(this.left.getAllData());
     }
 }
