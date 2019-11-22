@@ -29,12 +29,11 @@ public class Examples {
     TestHeap Heap18 = new TestHeap(18);
 
 
-    TestHeap Test1 = new TestHeap(6,Heap17,new MtHeap());
-    TestHeap Test2 = new TestHeap(6,Heap1,new MtHeap());
+    TestHeap Test1 = new TestHeap(5,Heap1,new MtHeap());
+    TestHeap Test2 = new TestHeap(6,Heap2,new MtHeap());
     TestHeap Test3 = new TestHeap(14,Heap18,new MtHeap());
     TestHeap Test4 = new TestHeap(6,Heap4,new MtHeap());
     TestHeap Test5 = new TestHeap(6,Heap2,Heap3);
-    TestHeap Test6 = new TestHeap()
 
     /**
      * Tests 1-10 Tests the addEltTester method
@@ -72,7 +71,7 @@ public class Examples {
     //tests adding an element to an empty heap
     @Test
     public void test6(){
-        assertTrue(HT.addEltTester(new MtHeap(),5,Heap12));
+        assertTrue(HT.addEltTester(new MtHeap(),5,Heap17));
     }
 
 
