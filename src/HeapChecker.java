@@ -4,9 +4,11 @@ public class HeapChecker {
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * Checks whether an IBinTree represents a correctly added element to a given IHeap, and is a heap
+     * @param hOrig Original heap
+     * @param elt Element added to hOring
+     * @param hAdded IBinTree being checked
+     * @return Whether or not hAdded passes the test
      */
     boolean addEltTester(IHeap hOrig, int elt, IBinTree hAdded) {
         if(hAdded.validHeap()){ //check that hAdded is a heap
@@ -17,11 +19,11 @@ public class HeapChecker {
         return false;
     }
 
-
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * Checks whether an IBinTree represents the original heap with the minimum element removed, and is a heap
+     * @param hOrig Original heap
+     * @param hRemoved IBinTree being checked
+     * @return Whether or not hRemoved passes the test
      */
     boolean remMinEltTester(IHeap hOrig, IBinTree hRemoved) {
         if(hRemoved.validHeap()){ //check that hAdded is a heap
@@ -34,9 +36,11 @@ public class HeapChecker {
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * Checks if the data contained within the modified heap contains only the data within the original
+     * @param hOrig the original heap
+     * @param elt the element added to the original heap
+     * @param hAdded IBinTree being checked
+     * @return Whether or not hRemoved passes the test
      */
     boolean listContAdd(IHeap hOrig, int elt, IBinTree hAdded){
 
@@ -68,11 +72,11 @@ public class HeapChecker {
     }
 
 
-
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * Checks if the data contained within the modified heap contains only the data within the original minus the minimum value
+     * @param hOrig the original heap
+     * @param hRemoved IBinTree being checked
+     * @return Whether or not hRemoved passes the test
      */
     boolean listContRem(IHeap hOrig, IBinTree hRemoved){
 
