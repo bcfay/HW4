@@ -77,6 +77,10 @@ import static org.junit.Assert.*;
      public void test28(){
          assertTrue(HT.addEltTester(Heap8,26,Heap8.addElt(26)));
      }
+     @Test
+     public void test31(){
+        assertTrue(HT.addEltTester(Heap9,23,Heap9.addElt(29)));
+     }
 
     /**
      * Tests 11-20 Tests the remMinEltTester method
