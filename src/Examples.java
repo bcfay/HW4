@@ -9,7 +9,7 @@ public class Examples {
 
     HeapChecker HT = new HeapChecker();
 
-    TestHeap Heap1 = new TestHeap(6);
+/*    TestHeap Heap1 = new TestHeap(6);
     TestHeap Heap2 = new TestHeap(9);
     TestHeap Heap3 = new TestHeap(14);
     TestHeap Heap4 = new TestHeap(12);
@@ -19,10 +19,10 @@ public class Examples {
     TestHeap Heap8 = new TestHeap(5,Heap2,Heap3);
     TestHeap Heap9 = new TestHeap(22, Heap1, Heap2);
     TestHeap Heap10 = new TestHeap(25,Heap9,Heap8);
-    TestHeap Heap11 = new TestHeap(34,Heap10,Heap3);
+    TestHeap Heap11 = new TestHeap(34,Heap10,Heap3);*/
 
 
-//    TestHeap2 Heap1 = new TestHeap2(6);
+//    TestHeap2 Heap1 = new TestHeap2(6);Heap8
 //    TestHeap2 Heap2 = new TestHeap2(9);
 //    TestHeap2 Heap3 = new TestHeap2(14);
 //    TestHeap2 Heap4 = new TestHeap2(12);
