@@ -34,6 +34,9 @@ public class Examples {
     TestHeap Test3 = new TestHeap(14,Heap18,new MtHeap());
     TestHeap Test4 = new TestHeap(6,Heap4,new MtHeap());
     TestHeap Test5 = new TestHeap(6,Heap2,Heap3);
+    TestHeap Test6 = new TestHeap(6,Heap17,Heap17);
+    TestHeap Test7 = new TestHeap(12,Heap1,new MtHeap());
+
 
     /**
      * Tests 1-10 Tests the addEltTester method
@@ -73,6 +76,18 @@ public class Examples {
     public void test6(){
         assertTrue(HT.addEltTester(new MtHeap(),5,Heap17));
     }
+
+    //tests for when the method adds the element too many times
+    @Test
+    public void test7(){
+        assertFalse(HT.addEltTester(Heap1,5,Test6));
+    }
+    //Tests if the result is a valid heap
+    @Test
+    public void test8(){
+        assertFalse(HT.addEltTester(Heap1,12,Test7));
+    }
+
 
 
 
