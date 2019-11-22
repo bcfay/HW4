@@ -19,15 +19,48 @@ public class Examples {
 //    TestHeap Heap8 = new TestHeap(5,Heap2,Heap3);
 //    TestHeap Heap9 = new TestHeap(22, Heap1, Heap2);
 
-    TestHeap2 Heap1 = new TestHeap2(6);
-    TestHeap2 Heap2 = new TestHeap2(9);
-    TestHeap2 Heap3 = new TestHeap2(14);
-    TestHeap2 Heap4 = new TestHeap2(12);
-    TestHeap2 Heap5 = new TestHeap2(19);
-    TestHeap2 Heap6 = new TestHeap2(22);
-    TestHeap2 Heap7 = new TestHeap2(32);
-    TestHeap2 Heap8 = new TestHeap2(5,Heap2,Heap3);
-    TestHeap2 Heap9 = new TestHeap2(22, Heap1, Heap2);
+//    TestHeap2 Heap1 = new TestHeap2(6);
+//    TestHeap2 Heap2 = new TestHeap2(9);
+//    TestHeap2 Heap3 = new TestHeap2(14);
+//    TestHeap2 Heap4 = new TestHeap2(12);
+//    TestHeap2 Heap5 = new TestHeap2(19);
+//    TestHeap2 Heap6 = new TestHeap2(22);
+//    TestHeap2 Heap7 = new TestHeap2(32);
+//    TestHeap2 Heap8 = new TestHeap2(5,Heap2,Heap3);
+//    TestHeap2 Heap9 = new TestHeap2(22, Heap1, Heap2);
+
+//    TestHeap3 Heap1 = new TestHeap3(6);
+//    TestHeap3 Heap2 = new TestHeap3(9);
+//    TestHeap3 Heap3 = new TestHeap3(14);
+//    TestHeap3 Heap4 = new TestHeap3(12);
+//    TestHeap3 Heap5 = new TestHeap3(19);
+//    TestHeap3 Heap6 = new TestHeap3(22);
+//    TestHeap3 Heap7 = new TestHeap3(32);
+//    TestHeap3 Heap8 = new TestHeap3(5,Heap2,Heap3);
+//    TestHeap3 Heap9 = new TestHeap3(22, Heap1, Heap2);
+
+//    TestHeap4 Heap1 = new TestHeap4(6);
+//    TestHeap4 Heap2 = new TestHeap4(9);
+//    TestHeap4 Heap3 = new TestHeap4(14);
+//    TestHeap4 Heap4 = new TestHeap4(12);
+//    TestHeap4 Heap5 = new TestHeap4(19);
+//    TestHeap4 Heap6 = new TestHeap4(22);
+//    TestHeap4 Heap7 = new TestHeap4(42);
+//    TestHeap4 Heap8 = new TestHeap4(5,Heap2,Heap4);
+//    TestHeap4 Heap9 = new TestHeap4(22, Heap1, Heap2);
+
+
+
+//    TestHeap5 Heap1 = new TestHeap5(6);
+//    TestHeap5 Heap2 = new TestHeap5(9);
+//    TestHeap5 Heap3 = new TestHeap5(15);
+//    TestHeap5 Heap4 = new TestHeap5(12);
+//    TestHeap5 Heap5 = new TestHeap5(19);
+//    TestHeap5 Heap6 = new TestHeap5(22);
+//    TestHeap5 Heap7 = new TestHeap5(52);
+//    TestHeap5 Heap8 = new TestHeap5(5,Heap2,Heap5);
+//    TestHeap5 Heap9 = new TestHeap5(22, Heap1, Heap2);
+
 
 
     /**
@@ -36,22 +69,18 @@ public class Examples {
 
     @Test
     public void test1(){
-
         assertTrue(HT.addEltTester(Heap1,5,Heap1.addElt(5)));
 
     }
     @Test
     public void test2(){
-
         assertTrue(HT.addEltTester(Heap1,9,Heap1.addElt(9)));
 
     }
-
     @Test
     public void test3(){
         assertTrue(HT.addEltTester(Heap3, 18, Heap3.addElt(18)));
     }
-
     @Test
     public void test4(){
         assertFalse(HT.addEltTester(Heap1,19,Heap1.addElt(7)));
