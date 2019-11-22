@@ -23,23 +23,58 @@ public class Examples {
     TestHeap Heap12 = new TestHeap(6, new MtHeap(),Heap2);
     TestHeap Heap13 = new TestHeap(6,Heap2,Heap3);
     TestHeap Heap14 = new TestHeap(6,Heap9,Heap8);
+    TestHeap Heap15 = new TestHeap(25,Heap9,Heap8);
+    TestHeap Heap16 = new TestHeap(34,Heap15,Heap3);
+    TestHeap Heap17 = new TestHeap(5);
+    TestHeap Heap18 = new TestHeap(18);
 
 
-
+    TestHeap Test1 = new TestHeap(6,Heap17,new MtHeap());
+    TestHeap Test2 = new TestHeap(6,Heap1,new MtHeap());
+    TestHeap Test3 = new TestHeap(14,Heap18,new MtHeap());
+    TestHeap Test4 = new TestHeap(6,Heap4,new MtHeap());
+    TestHeap Test5 = new TestHeap(6,Heap2,Heap3);
+    TestHeap Test6 = new TestHeap()
 
     /**
      * Tests 1-10 Tests the addEltTester method
      */
 
-    //Tests for passes auto-test for valid heap
 
-    //Tests for detects result that's not a heap
+    //tests the general method
+    @Test
+    public void test1(){
+        assertTrue(HT.addEltTester(Heap1,5,Test1));
 
-    //Tests for detects result where added elt occurs wrong number of times
+    }
+    //tests the general method
+    @Test
+    public void test2(){
+        assertTrue(HT.addEltTester(Heap1,9,Test2));
 
-    //Tests for detects result where other elts occur wrong number of times
+    }
+    //tests the general method
+    @Test
+    public void test3(){
+        assertTrue(HT.addEltTester(Heap3, 18, Test3));
+    }
+    //tests the general method
+    @Test
+    public void test4(){
+        assertFalse(HT.addEltTester(Heap1,19,Test4));
+    }
+    //tests when the method adds too many items to the heap
 
-    //Tests for detects result where total number of elements is incorrect
+    @Test
+    public void test5(){
+        assertFalse(HT.addEltTester(Heap1,9,Test5));
+    }
+    //tests adding an element to an empty heap
+    @Test
+    public void test6(){
+        assertTrue(HT.addEltTester(new MtHeap(),5,Heap12));
+    }
+
 
 
 
