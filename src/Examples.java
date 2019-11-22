@@ -17,6 +17,11 @@ import static org.junit.Assert.*;
     TestHeap Heap1 = new TestHeap(6,Heap2,Heap3);
 
 
+    TestHeap Heap8 = new TestHeap(5,Heap2,Heap3);
+    TestHeap Heap9 = new TestHeap(22,null,null);
+
+
+
     /**
      * Tests 1-10 Tests the addEltTester method
      */
@@ -68,6 +73,11 @@ import static org.junit.Assert.*;
     public void test10(){
         assertTrue(HT.addEltTester(Heap5,21,Heap6.addElt(21)));
     }
+     @Test
+     public void test28(){
+         assertTrue(HT.addEltTester(Heap8,26,Heap8.addElt(26)));
+     }
+
     /**
      * Tests 11-20 Tests the remMinEltTester method
      */
@@ -112,15 +122,52 @@ import static org.junit.Assert.*;
      public void test20(){
          assertTrue(HT.remMinEltTester(Heap5,Heap5.remMinElt()));
      }
+     @Test
+     public void test27(){
+         assertTrue(HT.remMinEltTester(Heap8,Heap8.remMinElt()));
+     }
+
 
      /**
       * Tests 21+ Tests all other helper methods
       */
-    // @Test
-    // public void test21(){
-        // assertTrue(HT.)
+    @Test
+     public void test21(){
+        assertTrue(Heap1.validHeap());
 
-    // }
+     }
+     @Test
+     public void test22(){
+         assertFalse(Heap7.validHeap());
+
+     }
+     @Test
+     public void test23(){
+         assertTrue(Heap2.validHeap());
+
+     }
+     @Test
+     public void test24(){
+        assertEquals(Heap1.getData(),Heap1.data);
+     }
+
+     @Test
+     public void test25(){
+         assertEquals(Heap6.getData(),Heap6.data);
+     }
+     @Test
+     public void test26(){
+         assertEquals(Heap3.getData(),Heap3.data);
+     }
+     @Test
+     public void test29(){
+        assertEquals(Heap9.getData(),Heap9.data);
+     }
+     @Test
+     public void test30(){
+        assertFalse(Heap9.validHeap());
+     }
+
 
 
 
