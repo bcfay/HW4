@@ -19,8 +19,11 @@ public class Examples {
     TestHeap Heap8 = new TestHeap(5,Heap2,Heap3); //Valid Heap
     TestHeap Heap9 = new TestHeap(22, Heap1, Heap2); //Invalid Heap
     TestHeap Heap10 = new TestHeap(9, Heap3, new MtHeap());
-    TestHeap Heap11 = new TestHeap(6,Heap1,Heap2); //Valid Heap
-    TestHeap Heap12 = new TestHeap(6, new MtHeap(),Heap2); //Valid Heap
+    TestHeap Heap11 = new TestHeap(6,Heap1,Heap2);
+    TestHeap Heap12 = new TestHeap(6, new MtHeap(),Heap2);
+    TestHeap Heap13 = new TestHeap(6,Heap2,Heap3);
+    TestHeap Heap14 = new TestHeap(6,Heap9,Heap8);
+
 
 
 
@@ -137,8 +140,9 @@ public class Examples {
 //    }
 
     /**
-     * Tests 11-20 Tests the remMinEltTester method
+     * testRem1-6 Tests the remMinEltTester method
      */
+
     //Tests for passes auto-test for valid heap
     @Test
     public void testRem1(){
@@ -160,93 +164,21 @@ public class Examples {
         assertTrue(HT.remMinEltTester(Heap11, Heap12));
     }
     //Tests for detects result where other elts occur wrong number of times
-//    @Test
-//    public void testRem4(){
-//        assertFalse(HT.remMinEltTester(Heap8, Heap10));
-//    }
+    @Test
+    public void testRem5(){
+        assertFalse(HT.remMinEltTester(Heap8, Heap13));
+    }
     //Tests for detects result where total number of elements is incorrect
+    @Test
+    public void testRem6(){
+        assertFalse(HT.remMinEltTester(Heap8, Heap14));
+    }
+    //Other
+    @Test
+    public void testRem7(){
+        assertTrue(HT.remMinEltTester(Heap1, new MtHeap()));
+    }
 
-//    @Test
-//    public void test11(){
-//        assertTrue(HT.remMinEltTester(Heap1,Heap1.remMinElt()));
-//    }
-//    @Test
-//    public void test12(){
-//        assertTrue(HT.remMinEltTester(Heap2,Heap2.remMinElt()));
-//    }
-//    @Test
-//    public void test13(){
-//        assertFalse(HT.remMinEltTester(Heap1,Heap5.remMinElt()));
-//    }
-//    @Test
-//    public void test14(){
-//        assertFalse(HT.remMinEltTester(Heap2,Heap1.remMinElt()));
-//    }
-//    @Test
-//    public void test15(){
-//        assertTrue(HT.remMinEltTester(Heap7,Heap7.remMinElt()));
-//    }
-//    @Test
-//    public void test16(){
-//        assertTrue(HT.remMinEltTester(Heap7,Heap7.remMinElt()));
-//    }
-//    @Test
-//    public void test17(){
-//        assertFalse(HT.remMinEltTester(Heap3,Heap2.remMinElt()));
-//    }
-//    @Test
-//    public void test18(){
-//        assertFalse(HT.remMinEltTester(Heap4,Heap1.remMinElt()));
-//    }
-//    @Test
-//    public void test19(){
-//        assertTrue(HT.remMinEltTester(Heap6,Heap6.remMinElt()));
-//    }
-//    @Test
-//    public void test20(){
-//        assertTrue(HT.remMinEltTester(Heap5,Heap5.remMinElt()));
-//    }
-//    @Test
-//    public void test27(){
-//        assertTrue(HT.remMinEltTester(Heap8,Heap8.remMinElt()));
-//    }
-//
-//
-//    /**
-//     * Tests 21+ Tests all other helper methods
-//     */
-//    @Test
-//    public void test21(){
-//        assertTrue(Heap1.validHeap());
-//
-//    }
-//    @Test
-//    public void test22(){
-//        assertTrue(Heap7.validHeap());
-//
-//    }
-//    @Test
-//    public void test23(){
-//        assertTrue(Heap2.validHeap());
-//
-//    }
-//    @Test
-//    public void test24(){
-//        assertEquals(Heap1.getData(),Heap1.data);
-//    }
-//
-//    @Test
-//    public void test25(){
-//        assertEquals(Heap6.getData(),Heap6.data);
-//    }
-//    @Test
-//    public void test26(){
-//        assertEquals(Heap3.getData(),Heap3.data);
-//    }
-//    @Test
-//    public void test29(){
-//        assertEquals(Heap9.getData(),Heap9.data);
-//    }
 //    @Test
 //    public void test30(){
 //        assertFalse(Heap9.validHeap());
