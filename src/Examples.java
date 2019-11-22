@@ -19,6 +19,9 @@ public class Examples {
     TestHeap Heap8 = new TestHeap(5,Heap2,Heap3); //Valid Heap
     TestHeap Heap9 = new TestHeap(22, Heap1, Heap2); //Invalid Heap
     TestHeap Heap10 = new TestHeap(9, Heap3, new MtHeap());
+    TestHeap Heap11 = new TestHeap(6,Heap1,Heap2); //Valid Heap
+    TestHeap Heap12 = new TestHeap(6, new MtHeap(),Heap2); //Valid Heap
+
 
 
 
@@ -143,10 +146,24 @@ public class Examples {
     }
     //Tests for detects result that's not a heap
 
+    @Test
+    public void testRem2(){
+        assertFalse(HT.remMinEltTester(Heap8, Heap9));
+    }
     //Tests for detects result where removed elt occurs wrong number of times
-
+    @Test
+    public void testRem3(){
+        assertFalse(HT.remMinEltTester(Heap11, Heap1));
+    }
+    @Test
+    public void testRem4(){
+        assertTrue(HT.remMinEltTester(Heap11, Heap12));
+    }
     //Tests for detects result where other elts occur wrong number of times
-
+//    @Test
+//    public void testRem4(){
+//        assertFalse(HT.remMinEltTester(Heap8, Heap10));
+//    }
     //Tests for detects result where total number of elements is incorrect
 
 //    @Test
