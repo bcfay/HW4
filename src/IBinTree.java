@@ -10,34 +10,37 @@ interface IBinTree {
     int height();
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * gets the data held in the IBinTree
+     * @return the data held in the IBinTree
      */
     int getData();
+
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * checks whether the IBinTree is a valid heap
+     * @return whether the IBinTree is a valid heap
      */
-    //checks whether the IBinTree is a valid heap
     boolean validHeap();
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * Checks if the tree has a value less than a given int
+     * @param min the value checked against
+     * @return whether the tree passed the test
      */
     //checks whether the IBinTree contains an element less than a given value
     boolean hasLessThan(int min);
+
+    /**
+     * gets all data contained in a heap
+     * @param dataList the linked list to add to
+     * @return the linked list with all of the data added to it
+     */
     LinkedList<Integer> getAllData(LinkedList dataList);
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * gets all data contained in a heap
+     * @return the linked list with all of the data added to it
      */
     LinkedList<Integer> getAllData();
 }
@@ -60,6 +63,10 @@ class MtBT implements IBinTree {
         return 0;
     }
 
+    /**
+     * gets the data held in the MtBT
+     * @return 0 for an empty tree
+     */
     @Override
     public int getData() {
         return 0;
@@ -67,9 +74,8 @@ class MtBT implements IBinTree {
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * checks whether the MtBT is a valid heap
+     * @return true as an empty tree is always a valid heap
      */
     @Override
     //an empty IBinTree is a valid heap
@@ -79,21 +85,20 @@ class MtBT implements IBinTree {
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * Checks if the tree has a value less than a given int
+     * @param min the value checked against
+     * @return 0 as an empty IBinTree will not contain a number less than any number
      */
     @Override
-    //an empty IBinTree will not contain a number less than any number
     public boolean hasLessThan(int min) {
         return false;
     }
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * gets all data contained in a heap
+     * @param dataList the linked list to add to
+     * @return dataList as the empty heap has no data
      */
     @Override
     public LinkedList<Integer> getAllData(LinkedList dataList) {
@@ -102,9 +107,8 @@ class MtBT implements IBinTree {
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * gets all data contained in a heap
+     * @return an empty linked list as the empty heap has no data
      */
     @Override
     public LinkedList<Integer> getAllData() {
@@ -145,6 +149,10 @@ class DataBT implements IBinTree {
         return 1 + Math.max(this.left.height(), this.right.height());
     }
 
+    /**
+     * gets the data held in the DataBT
+     * @return the tree's data
+     */
     @Override
     public int getData() {
         return this.data;
@@ -152,9 +160,8 @@ class DataBT implements IBinTree {
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * checks whether the DataBT is a valid heap
+     * @return whether the DataBT is a valid heap
      */
     @Override
     public boolean validHeap() {
@@ -167,9 +174,9 @@ class DataBT implements IBinTree {
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * Checks if the tree has a value less than a given int
+     * @param min the value checked against
+     * @return false if neither this node or any of its children contain a value less than the min
      */
     @Override
     //checks if the DataBT contains a value less than min
@@ -185,9 +192,9 @@ class DataBT implements IBinTree {
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * gets all data contained in a heap
+     * @param dataList the linked list to add to
+     * @return the given linkedlist with all of the data added to it
      */
     @Override
     public LinkedList<Integer> getAllData(LinkedList dataList) {
@@ -198,11 +205,10 @@ class DataBT implements IBinTree {
 
 
     /**
-     * Searches for a book with a matching title.
-     * @param hOrig The title we're searching for.
-     * @return True if a matching book is found.
+     * gets all data contained in a heap
+     * @return a linkedList with all of the data added to it
      */
     public LinkedList<Integer> getAllData() {
-        return this.right.getAllData(new LinkedList());
+        return this.right.getAllData(this.left.getAllData(new LinkedList()));
     }
 }
