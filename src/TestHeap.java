@@ -12,6 +12,16 @@ class TestHeap extends DataHeap {
 		this.right = right;
 	}
 
+	/**
+	 * constructs heap with empty children
+	 * @param i the data value held by this node
+	 */
+	public TestHeap(int i) {
+		super(i);
+		this.left = new MtHeap();
+		this.right = new MtHeap();
+	}
+
 	@Override
 	public IHeap addElt(int e) {
 		return new TestHeap (e, this.left, this.right);

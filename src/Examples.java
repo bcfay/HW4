@@ -8,13 +8,13 @@ import static org.junit.Assert.*;
     public Examples(){}
 
     HeapChecker HT = new HeapChecker();
-    TestHeap Heap6 = new TestHeap(22,null,null);
-    TestHeap Heap7 = new TestHeap(32,null,null);
-    TestHeap Heap4 = new TestHeap(12,null,null);
-    TestHeap Heap5 = new TestHeap(19,null,Heap7);
-    TestHeap Heap2 = new TestHeap(9,Heap4,null);
-    TestHeap Heap3 = new TestHeap(14,Heap5, Heap6);
-    TestHeap Heap1 = new TestHeap(6,Heap2,Heap3);
+    TestHeap Heap6 = new TestHeap(22);
+    TestHeap Heap7 = new TestHeap(32);
+    TestHeap Heap4 = new TestHeap(12);
+    TestHeap Heap5 = new TestHeap(19);
+    TestHeap Heap2 = new TestHeap(9);
+    TestHeap Heap3 = new TestHeap(14);
+    TestHeap Heap1 = new TestHeap(6);
 
 
     /**
